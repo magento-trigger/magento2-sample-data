@@ -7,14 +7,6 @@
  -->
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../../../vendor/magento/mtf/etc/variations.xsd">
     <testCase name="Magento\ConfigurableSampleData\Test\TestCase\NavigateConfigurableProductEntityTest" summary="Install Magento via Web Interface with Sample Data" ticketId="MAGETWO-33559">
-        <variation name="NavigateProductsTest1">
-            <data name="product/data/url_key" xsi:type="string">stellar-solar-jacket</data>
-            <data name="product/data/name" xsi:type="string">Stellar Solar Jacket</data>
-            <data name="product/data/sku" xsi:type="string">WJ01</data>
-            <data name="product/data/price/value" xsi:type="string">75</data>
-            <constraint name="Magento\Catalog\Test\Constraint\AssertProductPage" />
-            <constraint name="Magento\Catalog\Test\Constraint\AssertImagesAreVisibleOnProductPage" />
-        </variation>
         <variation name="NavigateProductsTest2">
             <data name="product/data/url_key" xsi:type="string">eos-v-neck-hoodie</data>
             <data name="product/data/name" xsi:type="string">Eos V-Neck Hoodie</data>
