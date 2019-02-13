@@ -62,6 +62,7 @@ class Msrp
     public function install(array $fixtures)
     {
         $this->configWriter->save('sales/msrp/enabled', 1);
+        $productCollection = $this->productCollection->addAttributeToSelect('*');
         foreach ($fixtures as $fileName) {
             $fileName = $this->fixtureManager->getFixture($fileName);
             if (!file_exists($fileName)) {
@@ -82,7 +83,7 @@ class Msrp
                     continue;
                 }
                 /** @var \Magento\Catalog\Model\Product $product */
-                $product = $this->productCollection->getItemById($productId);
+                $product = $productCollection->getItemById($productId);
                 $product->setMsrpDisplayActualPriceType(Type::TYPE_ON_GESTURE);
                 if (!empty($row['msrp'])) {
                     $price = $row['msrp'];
