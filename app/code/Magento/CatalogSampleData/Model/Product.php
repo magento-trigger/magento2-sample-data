@@ -143,7 +143,7 @@ class Product
                 if ($product->hasData(\Magento\Catalog\Model\Product::CUSTOM_ATTRIBUTES)) {
                     $product->setCustomAttribute('custom_layout_update', null);
                 }
-
+                $product->validate();
                 $product->save();
                 $this->installGallery($product);
             }
